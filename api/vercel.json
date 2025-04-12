@@ -1,9 +1,3 @@
 {
-    "version": 2,
-    "builds": [
-        { "src": "login.js", "use": "@vercel/node" },
-        { "src": "register.js", "use": "@vercel/node" },
-        { "src": "profile.js", "use": "@vercel/node" },
-        { "src": "users.js", "use": "@vercel/node" }
-    ]
+    "version": 2
 }
