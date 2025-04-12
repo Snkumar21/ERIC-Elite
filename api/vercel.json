@@ -1,17 +1,9 @@
 {
     "version": 2,
-    "rewrites": [
-        {
-            "source": "/loginform",
-            "destination": "/api/loginform"
-        },
-        {
-            "source": "/registerform",
-            "destination": "/api/registerform"
-        },
-        {
-            "source": "/profile",
-            "destination": "/api/profile"
-        }
+    "builds": [
+        { "src": "login.js", "use": "@vercel/node" },
+        { "src": "register.js", "use": "@vercel/node" },
+        { "src": "profile.js", "use": "@vercel/node" },
+        { "src": "users.js", "use": "@vercel/node" }
     ]
 }  
