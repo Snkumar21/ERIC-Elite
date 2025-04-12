@@ -8,6 +8,9 @@ const dbConfig = {
     password: process.env.DB_PASSWORD,
     database: process.env.DB_NAME
 };
+export default function handler(req, res) {
+  res.status(200).json({ message: 'Login API reached!' });
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
