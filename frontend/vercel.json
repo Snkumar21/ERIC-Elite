@@ -1,8 +1,7 @@
 {
     "rewrites": [
         { "source": "/", "destination": "/index.html" },
-        { "source": "/login", "destination": "/login.html" },
-        { "source": "/signup", "destination": "/signup.html" },
+        { "source": "/login-signup", "destination": "/login-signup.html" },
         { "source": "/dashboard", "destination": "/dashboard.html" }
     ],
     "cleanUrls": true
