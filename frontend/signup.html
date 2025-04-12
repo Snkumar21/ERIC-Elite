@@ -121,8 +121,8 @@
                 .then(data => {
                     if (data.success) {
                         alert("Sign Up Successfully");
-                        form.reset();  // Clear the form
-                        window.location.href = "/login";
+                        form.reset();
+                        window.location.href = "./login.html";
                     } else {
                         alert("Error: " + data.message);
                     }
