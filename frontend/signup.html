@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - ERIC Learn</title>
+    <link rel="icon" type="image/x-icon" href="./Img/icon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(45deg, #000, #00002e, #013c80, #00002e, #000);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .signup-box {
+            background: rgba(255, 255, 255, 0.074);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        .signup-box h2 {
+            margin-bottom: 20px;
+            color: #1e88e5;
+            text-align: center;
+        }
+
+        .signup-box input {
+            width: 93%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: none;
+            outline: none;
+        }
+
+        .signup-box input::placeholder {
+            color: #bbb;
+        }
+
+        .signup-box button {
+            width: 100%;
+            padding: 12px;
+            background-color: #1e88e5;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .signup-box button:hover {
+            background-color: #1565c0;
+            transition: background-color 0.3s ease;
+        }
+
+        .signup-box p {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        .signup-box a {
+            color: #1e88e5;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-box">
+        <h2>Create your account</h2>
+        <form id="registerform">
+            <input type="text" name="username" id="username" placeholder="Full Name" required>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <input type="password" name="password" id="new_password" placeholder="Password" required>
+            <input type="password" name="password_confirm" id="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("registerform");
+            form.addEventListener("submit", function (event) {
+                event.preventDefault();
+                
+                const username = document.getElementById("username").value;
+                const email = document.getElementById("email").value;
+                const new_password = document.getElementById("new_password").value;
+                const confirm_password = document.getElementById("confirm_password").value;
+
+                // Check if passwords match before sending to server
+                if (new_password !== confirm_password) {
+                    alert("Passwords do not match!");
+                    return;
+                }
+
+                // POST request to the server
+                fetch("/registerform", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ username, email, password: new_password }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert("Sign Up Successfully");
+                        form.reset();  // Clear the form
+                        window.location.href = "/login";
+                    } else {
+                        alert("Error: " + data.message);
+                    }
+                })
+                .catch(error => console.error("Error:", error));
+            });
+        });
+    </script>
+</body>
+</html>
