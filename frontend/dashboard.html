@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eric-Elite | Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #0d1117;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+<body class="text-white pb-20">
+
+<!-- Welcome Section -->
+<div class="p-6">
+    <div class="flex justify-between items-center mb-2">
+        <h2 class="text-2xl font-bold">Welcome back, Elite Agent</h2>
+        <div class="text-yellow-400 flex items-center space-x-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.286 3.959a1 1 0 00.95.69h4.167c.969 0 1.371 1.24.588 1.81l-3.375 2.454a1 1 0 00-.364 1.118l1.287 3.959c.3.921-.755 1.688-1.54 1.118l-3.375-2.454a1 1 0 00-1.175 0l-3.375 2.454c-.784.57-1.838-.197-1.539-1.118l1.287-3.959a1 1 0 00-.364-1.118L2.49 9.386c-.783-.57-.38-1.81.588-1.81h4.167a1 1 0 00.95-.69l1.286-3.959z" />
+            </svg>
+            <span>Elite Rank 3</span>
+        </div>
+    </div>
+    <div class="w-full bg-gray-700 rounded-full h-4 overflow-hidden">
+        <div class="bg-gradient-to-r from-blue-500 to-purple-500 h-full w-[70%] flex items-center justify-center text-sm text-white">
+        350 / 500 XP
+        </div>
+    </div>
+</div>
+
+<!-- Available Quests -->
+<div class="px-6 mt-6">
+    <h3 class="text-xl font-semibold mb-4">Available Quests</h3>
+
+    <!-- Quest 1 -->
+    <div class="bg-[#161b22] p-4 rounded-xl mb-4">
+        <div class="flex justify-between items-center mb-2">
+            <div>
+                <h4 class="text-lg font-bold">Grammar Gauntlet</h4>
+                <p class="text-gray-400 text-sm">Master the art of perfect grammar</p>
+            </div>
+            <span class="text-blue-400 flex items-center space-x-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h4m0 0h4m-4-4v4m0-4V5m-4 4h8" />
+                </svg>
+                <span>100 XP</span>
+            </span>
+        </div>
+        <button class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">Start Quest</button>
+    </div>
+
+    <!-- Quest 2 -->
+    <div class="bg-[#161b22] p-4 rounded-xl mb-4">
+        <div class="flex justify-between items-center mb-2">
+            <div>
+                <h4 class="text-lg font-bold">Vocabulary Vault</h4>
+                <p class="text-gray-400 text-sm">Expand your word power</p>
+            </div>
+            <span class="text-blue-400 flex items-center space-x-1">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 21h4m0 0h4m-4-4v4m0-4V5m-4 4h8" />
+                </svg>
+                <span>150 XP</span>
+            </span>
+        </div>
+        <button class="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition">Start Quest</button>
+    </div>
+</div>
+
+<!-- Quick Stats -->
+<div class="px-6 mt-8">
+    <h3 class="text-xl font-semibold mb-4">Quick Stats</h3>
+    <div class="grid grid-cols-3 gap-4">
+        <div class="bg-[#161b22] text-center p-4 rounded-xl">
+            <div class="text-blue-500 text-3xl font-bold">5</div>
+            <p class="text-sm text-gray-400 mt-1">Quests Completed</p>
+        </div>
+        <div class="bg-[#161b22] text-center p-4 rounded-xl">
+            <div class="text-yellow-400 text-3xl font-bold">8</div>
+            <p class="text-sm text-gray-400 mt-1">Achievements</p>
+        </div>
+        <div class="bg-[#161b22] text-center p-4 rounded-xl">
+            <div class="text-purple-400 text-3xl font-bold">#12</div>
+            <p class="text-sm text-gray-400 mt-1">Rank</p>
+        </div>
+    </div>
+</div>
+
+<!-- Bottom Navigation -->
+<nav class="fixed bottom-0 left-0 right-0 bg-[#0d1117] border-t border-gray-700 shadow-inner z-50">
+    <div class="flex justify-around text-sm text-white py-3">
+        <a href="quest.html" class="flex flex-col items-center hover:text-blue-400">
+            📘
+            <span>Quests</span>
+        </a>
+        <a href="achievement.html" class="flex flex-col items-center hover:text-yellow-400">
+            🏅
+            <span>Achievements</span>
+        </a>
+        <a href="leaderboard.html" class="flex flex-col items-center hover:text-purple-400">
+            🏆
+            <span>Leaderboard</span>
+        </a>
+        <a href="profile.html" class="flex flex-col items-center hover:text-green-400">
+            👤
+            <span>Profile</span>
+        </a>
+    </div>
+</nav>
+</body>
+</html>
