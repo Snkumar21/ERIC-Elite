@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eric-Elite | Login / Signup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #0a0f2c, #111835);
+      color: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: #1a2238;
+      border-radius: 12px;
+      padding: 40px 30px;
+      box-shadow: 0 0 20px rgba(0, 255, 247, 0.2);
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .title {
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      font-size: 2rem;
+      color: #00fff7;
+      margin-bottom: 10px;
+    }
+
+    .role-toggle {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+
+    .role-toggle button {
+      flex: 1;
+      background: none;
+      border: none;
+      font-weight: bold;
+      color: #bbb;
+      padding: 10px 0;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .role-toggle button.active {
+      color: #00fff7;
+      border-bottom: 2px solid #00fff7;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    form input {
+      background-color: #0f132c;
+      border: 1px solid #2f3b61;
+      color: #f5f5f5;
+      padding: 12px;
+      margin-bottom: 18px;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    form button {
+      padding: 12px;
+      background: linear-gradient(135deg, #00bcd4, #6200ea);
+      color: #fff;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background: linear-gradient(135deg, #00fff7, #9c27b0);
+    }
+
+    .switch-text {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    .switch-text span {
+      color: #00fff7;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="title">Eric-Elite</div>
+
+    <div class="role-toggle">
+      <button id="studentBtn" class="active" onclick="switchRole('student')">Student</button>
+      <button id="teacherBtn" onclick="switchRole('teacher')">Teacher</button>
+    </div>
+
+    <form id="loginForm">
+      <input type="text" placeholder="Username" required />
+      <input type="email" placeholder="Email" required />
+      <input type="password" placeholder="Password" required />
+      <button type="submit">Login / Sign Up</button>
+    </form>
+
+    <div class="switch-text">
+      Already have an account? <span onclick="alert('Switch to login view logic')">Log in here</span>
+    </div>
+  </div>
+
+  <script>
+    function switchRole(role) {
+      const studentBtn = document.getElementById("studentBtn");
+      const teacherBtn = document.getElementById("teacherBtn");
+
+      if (role === "student") {
+        studentBtn.classList.add("active");
+        teacherBtn.classList.remove("active");
+      } else {
+        teacherBtn.classList.add("active");
+        studentBtn.classList.remove("active");
+      }
+
+      // You can switch logic or form placeholders here if needed
+    }
+  </script>
+
+</body>
+</html>
