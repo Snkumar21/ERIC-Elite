@@ -149,14 +149,15 @@
       const password = e.target.querySelector('input[type="password"]').value;
   
       try {
-        const response = await fetch("https://your-backend.vercel.app/api/login", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ email, password }),
+        const response = await fetch('https://eric-elite-backend.vercel.app/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: userEmail,
+            password: userPassword
+          })
         });
-  
+
         const data = await response.json();
   
         if (data.success) {
