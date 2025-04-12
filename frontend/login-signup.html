@@ -132,7 +132,7 @@
     function switchRole(role) {
       const studentBtn = document.getElementById("studentBtn");
       const teacherBtn = document.getElementById("teacherBtn");
-
+  
       if (role === "student") {
         studentBtn.classList.add("active");
         teacherBtn.classList.remove("active");
@@ -140,10 +140,39 @@
         teacherBtn.classList.add("active");
         studentBtn.classList.remove("active");
       }
-
-      // You can switch logic or form placeholders here if needed
     }
+  
+    document.getElementById("loginForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+  
+      const email = e.target.querySelector('input[type="email"]').value;
+      const password = e.target.querySelector('input[type="password"]').value;
+  
+      try {
+        const response = await fetch("https://your-backend.vercel.app/api/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+        });
+  
+        const data = await response.json();
+  
+        if (data.success) {
+          alert("✅ Login successful!");
+          // Store token if needed
+          localStorage.setItem("token", data.token);
+          // Redirect to dashboard or another page
+          window.location.href = "/dashboard.html";
+        } else {
+          alert("❌ " + data.message);
+        }
+      } catch (err) {
+        alert("⚠️ Error connecting to server");
+        console.error(err);
+      }
+    });
   </script>
-
 </body>
 </html>
