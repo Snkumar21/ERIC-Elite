@@ -1,6 +1,6 @@
 {
     "version": 2,
     "builds": [
-        { "src": "login.js", "use": "@vercel/node" }
+        { "src": "api/login.js", "use": "@vercel/node" }
     ]
 }
