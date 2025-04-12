@@ -1,0 +1,141 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #101624;
+    margin: 0;
+    padding: 0;
+    color: #f5f5f5;
+  }
+  
+  .teacher-nav {
+    background-color: #1e2740;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid #00fff7;
+  }
+  
+  .teacher-nav a {
+    color: #b8c0d1;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .teacher-nav a.active,
+  .teacher-nav a:hover {
+    background-color: #00fff7;
+    color: #101624;
+  }
+  
+  .manage-quests-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 40px;
+    background-color: #1e2740;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 247, 0.1);
+  }
+  
+  .form-header h1 {
+    font-size: 32px;
+    color: #00fff7;
+    margin-bottom: 10px;
+  }
+  
+  .form-header p {
+    font-size: 16px;
+    color: #a8b2d1;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+    margin-top: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .quest-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #2c3656;
+    border-radius: 10px;
+  }
+  
+  .quest-table th,
+  .quest-table td {
+    padding: 16px 20px;
+    text-align: left;
+    color: #f5f5f5;
+  }
+  
+  .quest-table th {
+    background-color: #1c223a;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .quest-table tr:nth-child(even) {
+    background-color: #242f4a;
+  }
+  
+  .quest-table tr:hover {
+    background-color: #343f5e;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .status {
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .status.active {
+    background-color: #00d68f;
+    color: #0d1b2a;
+  }
+  
+  .status.inactive {
+    background-color: #ff5757;
+    color: #fff;
+  }
+  
+  .btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-right: 6px;
+    font-size: 14px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn.edit {
+    background-color: #00b8f4;
+    color: #0d1b2a;
+  }
+  
+  .btn.delete {
+    background-color: #ff4f4f;
+    color: #fff;
+  }
+  
+  .btn.activate {
+    background-color: #00e68a;
+    color: #0d1b2a;
+  }
+  
+  .btn.deactivate {
+    background-color: #ffc107;
+    color: #0d1b2a;
+  }
+  
+  .btn:hover {
+    opacity: 0.9;
+  }
+  

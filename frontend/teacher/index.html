@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teacher Dashboard | Eric-Elite</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="teacher-nav">
+    <a href="index.html" class="active">Dashboard</a>
+    <a href="create-quest.html">Create Quest</a>
+    <a href="manage-quests.html">Manage Quests</a>
+    <a href="progress-tracker.html">Progress</a>
+    <a href="badge-creator.html">Badges</a>
+  </nav>
+
+  <!-- Main Dashboard Content -->
+  <main class="dashboard-container">
+
+    <!-- Header Section -->
+    <header class="dashboard-header">
+      <h1>Welcome to Your Teaching Dashboard</h1>
+      <p>Manage your quests, track progress, and reward students effectively.</p>
+    </header>
+
+    <!-- Stats Section -->
+    <section class="stats">
+      <div class="stats-card">
+        <img src="https://img.icons8.com/ios-filled/50/000000/books.png" alt="Quests Icon" />
+        <h3>Total Quests</h3>
+        <p><strong>8</strong></p>
+      </div>
+      <div class="stats-card">
+        <img src="https://img.icons8.com/ios-filled/50/000000/graduation-cap.png" alt="Students Icon" />
+        <h3>Students Enrolled</h3>
+        <p><strong>120</strong></p>
+      </div>
+      <div class="stats-card">
+        <img src="https://img.icons8.com/ios-filled/50/000000/books.png" alt="XP Icon" />
+        <h3>Avg Student XP</h3>
+        <p><strong>1,540</strong></p>
+      </div>
+    </section>
+
+    <!-- Featured Quests Section -->
+    <section class="featured-quests">
+      <h2>Featured Quests</h2>
+      <div class="quests-grid">
+        <!-- Quest 1 -->
+        <div class="quest-card">
+          <h3>Grammar Gauntlet</h3>
+          <p>Difficulty: Medium | 24 students completed</p>
+          <a href="manage-quests.html" class="cta-button">Manage</a>
+        </div>
+        <!-- Quest 2 -->
+        <div class="quest-card">
+          <h3>Math Maze</h3>
+          <p>Difficulty: Hard | 15 students completed</p>
+          <a href="manage-quests.html" class="cta-button">Manage</a>
+        </div>
+        <!-- Quest 3 -->
+        <div class="quest-card">
+          <h3>Science Adventure</h3>
+          <p>Difficulty: Easy | 45 students completed</p>
+          <a href="manage-quests.html" class="cta-button">Manage</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

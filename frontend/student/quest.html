@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Quest | Eric-Elite</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0 20px 100px;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #0a0f2c, #111835);
+      color: #f5f5f5;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00fff7;
+    }
+
+    .section {
+      max-width: 900px;
+      margin: 50px auto;
+      background: #1b223e;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 255, 247, 0.1);
+    }
+
+    .intro {
+      text-align: center;
+    }
+
+    .video-container {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .quiz-question {
+      margin-top: 20px;
+    }
+
+    .quiz-question p {
+      font-weight: bold;
+    }
+
+    .quiz-question label {
+      display: block;
+      margin: 8px 0;
+      cursor: pointer;
+    }
+
+    .quiz-question input[type="radio"] {
+      margin-right: 8px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: #00fff7;
+      color: #111;
+      padding: 10px 20px;
+      font-weight: bold;
+      font-family: 'Orbitron', sans-serif;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #00d5d5;
+    }
+
+    .feedback {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .boss-battle {
+      display: none;
+      margin-top: 40px;
+      background: #222b4a;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    }
+
+    .reward-section {
+      display: none;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .reward-section .badge {
+      font-size: 2.5rem;
+      color: gold;
+      animation: pop 0.6s ease-in-out;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0.2); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    /* Bottom Navbar */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #141a35;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0;
+      box-shadow: 0 -2px 10px rgba(0, 255, 247, 0.1);
+      z-index: 100;
+    }
+
+    .bottom-nav a {
+      color: #aaa;
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.85rem;
+      transition: 0.3s;
+    }
+
+    .bottom-nav a i {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+
+    .bottom-nav a:hover,
+    .bottom-nav a.active {
+      color: #00fff7;
+    }
+
+    @media screen and (max-width: 600px) {
+      .quest-card {
+        font-size: 0.95rem;
+      }
+
+      .bottom-nav a {
+        font-size: 0.75rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="section intro">
+    <h1>🚀 Welcome to the Grammar Gauntlet!</h1>
+    <p>Agent, your mission is to conquer the language realm by mastering grammar basics. Begin your journey below.</p>
+  </div>
+
+  <div class="section video-container">
+    <h2>🎥 Training Briefing</h2>
+    <iframe src="https://www.youtube.com/embed/dlPjxz4LGak" allowfullscreen></iframe>
+  </div>
+
+  <div class="section">
+    <h2>🧠 Knowledge Quiz</h2>
+
+    <div class="quiz-question" id="question1">
+      <p>1. What is the correct form of the verb in the sentence: "She ____ every day."</p>
+      <label><input type="radio" name="q1" value="run">run</label>
+      <label><input type="radio" name="q1" value="runs">runs</label>
+      <label><input type="radio" name="q1" value="ran">ran</label>
+    </div>
+
+    <div class="quiz-question" id="question2">
+      <p>2. Choose the correct sentence:</p>
+      <label><input type="radio" name="q2" value="There going to school.">There going to school.</label>
+      <label><input type="radio" name="q2" value="They're going to school.">They're going to school.</label>
+      <label><input type="radio" name="q2" value="Their going to school.">Their going to school.</label>
+    </div>
+
+    <button class="btn" onclick="checkQuiz()">Submit Quiz</button>
+    <div class="feedback" id="feedback"></div>
+  </div>
+
+  <div class="section boss-battle" id="bossSection">
+    <h2>👹 Boss Battle Unlocked!</h2>
+    <p>You’ve proven your worth. Defeat the Grammar Goblin with this final challenge!</p>
+    <div class="quiz-question">
+      <p>Final Question: Which sentence is grammatically correct?</p>
+      <label><input type="radio" name="boss" value="I has a dream.">I has a dream.</label>
+      <label><input type="radio" name="boss" value="I have a dream.">I have a dream.</label>
+      <label><input type="radio" name="boss" value="I haves a dream.">I haves a dream.</label>
+    </div>
+    <button class="btn" onclick="completeQuest()">Defeat Boss</button>
+  </div>
+
+  <div class="reward-section" id="reward">
+    <h2>🏅 Quest Completed!</h2>
+    <div class="badge"><i class="fas fa-medal"></i></div>
+    <p>You earned 150 Elite XP and the badge <strong>Grammar Guardian</strong>!</p>
+  </div>
+
+  <!-- 🔻 Bottom Nav -->
+  <nav class="bottom-nav">
+    <a href="achievements.html">
+      <i class="fas fa-medal"></i>
+      Achievements
+    </a>
+    <a href="leaderboard.html">
+      <i class="fas fa-trophy"></i>
+      Leaderboard
+    </a>
+    <a href="quest.html" class="active">
+      <i class="fas fa-gamepad"></i>
+      Quests
+    </a>
+  </nav>
+
+  <script>
+    function checkQuiz() {
+      const q1 = document.querySelector('input[name="q1"]:checked');
+      const q2 = document.querySelector('input[name="q2"]:checked');
+      const feedback = document.getElementById("feedback");
+
+      if (!q1 || !q2) {
+        feedback.innerHTML = "Please answer all quiz questions.";
+        feedback.style.color = "orange";
+        return;
+      }
+
+      if (q1.value === "runs" && q2.value === "They're going to school.") {
+        feedback.innerHTML = "Great job, Agent! Boss Battle Unlocked.";
+        feedback.style.color = "#00fff7";
+        document.getElementById("bossSection").style.display = "block";
+      } else {
+        feedback.innerHTML = "Oops! Some answers were incorrect. Try again!";
+        feedback.style.color = "red";
+        document.getElementById("bossSection").style.display = "none";
+      }
+    }
+
+    function completeQuest() {
+      const boss = document.querySelector('input[name="boss"]:checked');
+      if (!boss) return alert("Please answer the boss question!");
+
+      if (boss.value === "I have a dream.") {
+        document.getElementById("reward").style.display = "block";
+        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+      } else {
+        alert("Wrong answer! Try again, Agent!");
+      }
+    }
+  </script>
+
+</body>
+</html>

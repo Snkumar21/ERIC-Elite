@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Achievements | Eric-Elite</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #0a0f2c, #111835);
+      color: #f5f5f5;
+      padding: 40px 20px;
+    }
+
+    /* Bottom Navbar */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #141a35;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0;
+      box-shadow: 0 -2px 10px rgba(0, 255, 247, 0.1);
+      z-index: 100;
+    }
+
+    .bottom-nav a {
+      color: #aaa;
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.85rem;
+      transition: 0.3s;
+    }
+
+    .bottom-nav a i {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+
+    .bottom-nav a:hover,
+    .bottom-nav a.active {
+      color: #00fff7;
+    }
+
+    @media screen and (max-width: 600px) {
+      .quest-card {
+        font-size: 0.95rem;
+      }
+
+      .bottom-nav a {
+        font-size: 0.75rem;
+      }
+    }
+
+    /* Content Styles */
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      color: #00fff7;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #aaa;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .achievement-card {
+      background: #1b223e;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 0 15px rgba(0, 255, 247, 0.1);
+      border-left: 5px solid #00fff7;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .achievement-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px rgba(0, 255, 247, 0.3);
+    }
+
+    .achievement-card h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .achievement-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    .badge-icon {
+      font-size: 2.5rem;
+      color: #00fff7;
+      margin-bottom: 15px;
+    }
+
+    .achievement-tier {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 0.75rem;
+      padding: 4px 8px;
+      background: #00fff7;
+      color: #111;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+
+    /* Optional tiers */
+    .tier-gold { background: gold; color: #000; }
+    .tier-silver { background: silver; color: #000; }
+    .tier-bronze { background: #cd7f32; color: #fff; }
+
+    @media screen and (max-width: 600px) {
+      .badge-icon {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🏅 Your Achievements</h1>
+  <p class="tagline">Every quest completed brings you closer to elite mastery. Keep ranking up, Agent!</p>
+
+  <div class="grid">
+    <div class="achievement-card">
+      <div class="achievement-tier tier-gold">Epic</div>
+      <div class="badge-icon"><i class="fas fa-fire"></i></div>
+      <h3>🔥 Daily Streak Hero</h3>
+      <p>Logged in for 5 consecutive days. Your consistency fuels greatness.</p>
+    </div>
+
+    <div class="achievement-card">
+      <div class="achievement-tier tier-silver">Rare</div>
+      <div class="badge-icon"><i class="fas fa-pen-nib"></i></div>
+      <h3>✍️ Grammar Guardian</h3>
+      <p>Mastered all grammar quests. Language is your weapon.</p>
+    </div>
+
+    <div class="achievement-card">
+      <div class="achievement-tier tier-bronze">Uncommon</div>
+      <div class="badge-icon"><i class="fas fa-check-double"></i></div>
+      <h3>✔️ Quiz Crusher</h3>
+      <p>Scored 100% in three consecutive quizzes. Precision is power.</p>
+    </div>
+
+    <div class="achievement-card">
+      <div class="achievement-tier tier-silver">Rare</div>
+      <div class="badge-icon"><i class="fas fa-star"></i></div>
+      <h3>🌟 First Quest Complete</h3>
+      <p>Completed your first ever quest. Every hero starts with one step.</p>
+    </div>
+
+    <div class="achievement-card">
+      <div class="achievement-tier tier-gold">Epic</div>
+      <div class="badge-icon"><i class="fas fa-rocket"></i></div>
+      <h3>🚀 Level 5 Reached</h3>
+      <p>Hit Level 5 and joined the Elite Ranks. You’re leveling up fast!</p>
+    </div>
+  </div>
+
+  <!-- 🔻 Bottom Nav -->
+  <nav class="bottom-nav">
+    <a href="achievements.html">
+      <i class="fas fa-medal"></i>
+      Achievements
+    </a>
+    <a href="leaderboard.html">
+      <i class="fas fa-trophy"></i>
+      Leaderboard
+    </a>
+    <a href="quest.html" class="active">
+      <i class="fas fa-gamepad"></i>
+      Quests
+    </a>
+  </nav>
+
+</body>
+</html>

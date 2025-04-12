@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Leaderboard | Eric-Elite</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to right, #0a0f2c, #111835);
+      color: #f5f5f5;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      text-align: center;
+      color: #00fff7;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      text-align: center;
+      font-size: 1rem;
+      color: #aaa;
+      margin-bottom: 40px;
+    }
+
+    .leaderboard {
+      max-width: 800px;
+      margin: auto;
+      background: #1b223e;
+      border-radius: 12px;
+      padding: 20px 30px;
+      box-shadow: 0 0 15px rgba(0, 255, 247, 0.15);
+    }
+
+    .leaderboard-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .leaderboard-item:last-child {
+      border-bottom: none;
+    }
+
+    .rank {
+      font-size: 1.2rem;
+      font-weight: bold;
+      width: 40px;
+      text-align: center;
+    }
+
+    .rank.gold { color: gold; }
+    .rank.silver { color: silver; }
+    .rank.bronze { color: #cd7f32; }
+
+    .name {
+      font-weight: bold;
+      flex: 1;
+      padding-left: 10px;
+      color: #f5f5f5;
+    }
+
+    .xp {
+      font-size: 0.95rem;
+      color: #00fff7;
+      font-weight: bold;
+    }
+
+    .badge-icon {
+      font-size: 1.3rem;
+      margin-right: 8px;
+    }
+
+    .rewards {
+      max-width: 700px;
+      margin: 40px auto 10px;
+      text-align: center;
+    }
+
+    .rewards h3 {
+      font-family: 'Orbitron', sans-serif;
+      color: #00fff7;
+    }
+
+    .reward-icons {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 15px;
+    }
+
+    .reward-icons div {
+      text-align: center;
+    }
+
+    .reward-icons i {
+      font-size: 2.2rem;
+      margin-bottom: 5px;
+    }
+
+    .gold i { color: gold; }
+    .silver i { color: silver; }
+    .bronze i { color: #cd7f32; }
+
+    @media screen and (max-width: 600px) {
+      .leaderboard-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+      }
+    }
+
+     /* Bottom Navbar */
+     .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #141a35;
+      display: flex;
+      justify-content: space-around;
+      padding: 12px 0;
+      box-shadow: 0 -2px 10px rgba(0, 255, 247, 0.1);
+      z-index: 100;
+    }
+
+    .bottom-nav a {
+      color: #aaa;
+      text-decoration: none;
+      text-align: center;
+      font-size: 0.85rem;
+      transition: 0.3s;
+    }
+
+    .bottom-nav a i {
+      display: block;
+      font-size: 1.5rem;
+      margin-bottom: 5px;
+    }
+
+    .bottom-nav a:hover,
+    .bottom-nav a.active {
+      color: #00fff7;
+    }
+
+    @media screen and (max-width: 600px) {
+      .quest-card {
+        font-size: 0.95rem;
+      }
+
+      .bottom-nav a {
+        font-size: 0.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📈 Top Elite Agents</h1>
+  <p class="tagline">Climb the ranks. Earn XP. Become legendary.</p>
+
+  <div class="leaderboard">
+
+    <div class="leaderboard-item">
+      <div class="rank gold"><i class="fas fa-crown"></i></div>
+      <div class="name">Agent Nova</div>
+      <div class="xp">🏅 1300 XP</div>
+    </div>
+
+    <div class="leaderboard-item">
+      <div class="rank silver"><i class="fas fa-medal"></i></div>
+      <div class="name">Shadow Spark</div>
+      <div class="xp">🥈 1150 XP</div>
+    </div>
+
+    <div class="leaderboard-item">
+      <div class="rank bronze"><i class="fas fa-award"></i></div>
+      <div class="name">ZeroByte</div>
+      <div class="xp">🥉 1090 XP</div>
+    </div>
+
+    <div class="leaderboard-item">
+      <div class="rank">4</div>
+      <div class="name">CyberFox</div>
+      <div class="xp">1020 XP</div>
+    </div>
+
+    <div class="leaderboard-item">
+      <div class="rank">5</div>
+      <div class="name">ByteBlazer</div>
+      <div class="xp">990 XP</div>
+    </div>
+  </div>
+
+  <div class="rewards">
+    <h3>🏆 Rewards for Top 3 Agents</h3>
+    <div class="reward-icons">
+      <div class="gold">
+        <i class="fas fa-crown"></i>
+        <p>Elite Crown</p>
+      </div>
+      <div class="silver">
+        <i class="fas fa-rocket"></i>
+        <p>XP Boost</p>
+      </div>
+      <div class="bronze">
+        <i class="fas fa-shield-alt"></i>
+        <p>Rare Badge</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 🔻 Bottom Nav -->
+  <nav class="bottom-nav">
+    <a href="achievements.html">
+      <i class="fas fa-medal"></i>
+      Achievements
+    </a>
+    <a href="leaderboard.html">
+      <i class="fas fa-trophy"></i>
+      Leaderboard
+    </a>
+    <a href="quest.html" class="active">
+      <i class="fas fa-gamepad"></i>
+      Quests
+    </a>
+  </nav>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "version": 2,
+    "rewrites": [
+        {
+            "source": "/loginform",
+            "destination": "/api/loginform"
+        },
+        {
+            "source": "/registerform",
+            "destination": "/api/registerform"
+        },
+        {
+            "source": "/profile",
+            "destination": "/api/profile"
+        }
+    ]
+}  

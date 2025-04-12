@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Progress Tracker | Eric-Elite</title>
+  <link rel="stylesheet" href="css/progress-tracker.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="teacher-nav">
+    <a href="index.html">Dashboard</a>
+    <a href="create-quest.html">Create Quest</a>
+    <a href="manage-quests.html">Manage Quests</a>
+    <a href="progress-tracker.html" class="active">Progress</a>
+    <a href="badge-creator.html">Badges</a>
+  </nav>
+
+  <!-- Page Container -->
+  <main class="progress-tracker-container">
+    <header class="form-header">
+      <h1>Student Progress Tracker</h1>
+      <p>Track XP, completed quests, and earned badges for each student.</p>
+    </header>
+
+    <!-- Progress Table -->
+    <div class="table-container">
+      <table class="quest-table">
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>XP Earned</th>
+            <th>Completed Quests</th>
+            <th>Badges Unlocked</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sara Thompson</td>
+            <td>2,300</td>
+            <td>7</td>
+            <td>Quiz Crusher, Daily Hero</td>
+            <td><span class="status active">Active</span></td>
+          </tr>
+          <tr>
+            <td>Leon Grant</td>
+            <td>1,150</td>
+            <td>4</td>
+            <td>Math Master</td>
+            <td><span class="status active">Active</span></td>
+          </tr>
+          <tr>
+            <td>Emma Collins</td>
+            <td>890</td>
+            <td>3</td>
+            <td>Starter Streak</td>
+            <td><span class="status inactive">Inactive</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+</html>

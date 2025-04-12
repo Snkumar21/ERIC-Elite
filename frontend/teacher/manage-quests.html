@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Quests | Eric-Elite</title>
+  <link rel="stylesheet" href="css/manage-quest.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="teacher-nav">
+    <a href="index.html">Dashboard</a>
+    <a href="create-quest.html">Create Quest</a>
+    <a href="manage-quests.html" class="active">Manage Quests</a>
+    <a href="progress-tracker.html">Progress</a>
+    <a href="badge-creator.html">Badges</a>
+  </nav>
+
+  <!-- Page Container -->
+  <main class="manage-quests-container">
+    <header class="form-header">
+      <h1>Manage Your Quests</h1>
+      <p>View, edit, activate, or remove quests you've created.</p>
+    </header>
+
+    <!-- Quests Table -->
+    <div class="table-container">
+      <table class="quest-table">
+        <thead>
+          <tr>
+            <th>Quest Title</th>
+            <th>Difficulty</th>
+            <th>Status</th>
+            <th>Students Completed</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Example Row -->
+          <tr>
+            <td>Grammar Gauntlet</td>
+            <td>Medium</td>
+            <td><span class="status active">Active</span></td>
+            <td>32</td>
+            <td>
+              <button class="btn edit">Edit</button>
+              <button class="btn delete">Delete</button>
+              <button class="btn deactivate">Deactivate</button>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Math Maze</td>
+            <td>Hard</td>
+            <td><span class="status inactive">Inactive</span></td>
+            <td>17</td>
+            <td>
+              <button class="btn edit">Edit</button>
+              <button class="btn delete">Delete</button>
+              <button class="btn activate">Activate</button>
+            </td>
+          </tr>
+
+          <!-- More rows can be dynamically added -->
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+</html>

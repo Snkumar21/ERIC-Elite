@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Quest | Eric-Elite</title>
+  <link rel="stylesheet" href="css/create-quest.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="teacher-nav">
+    <a href="index.html">Dashboard</a>
+    <a href="create-quest.html" class="active">Create Quest</a>
+    <a href="manage-quests.html">Manage Quests</a>
+    <a href="progress-tracker.html">Progress</a>
+    <a href="badge-creator.html">Badges</a>
+  </nav>
+
+  <!-- Create Quest Form -->
+  <main class="create-quest-container">
+    <header class="form-header">
+      <h1>Create a New Learning Quest</h1>
+      <p>Shape the learning experience by designing a new quest for your students.</p>
+    </header>
+
+    <form action="#" method="POST" class="create-quest-form">
+      <!-- Quest Title -->
+      <div class="input-group">
+        <label for="quest-title">Quest Title</label>
+        <input type="text" id="quest-title" name="quest-title" required placeholder="Enter a catchy title for your quest" />
+      </div>
+
+      <!-- Quest Description -->
+      <div class="input-group">
+        <label for="quest-description">Quest Description</label>
+        <textarea id="quest-description" name="quest-description" required placeholder="Write a brief description of the quest. What is the quest about?" rows="5"></textarea>
+      </div>
+
+      <!-- Difficulty Level -->
+      <div class="input-group">
+        <label for="difficulty">Difficulty Level</label>
+        <select id="difficulty" name="difficulty" required>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+
+      <!-- Quest Content -->
+      <div class="input-group">
+        <label for="quest-content">Lesson Content (Video or Text)</label>
+        <textarea id="quest-content" name="quest-content" required placeholder="Provide lesson content or embed a video URL here" rows="5"></textarea>
+      </div>
+
+      <!-- Quiz Questions -->
+      <div class="input-group">
+        <label for="quiz-questions">Quiz Questions (Optional)</label>
+        <textarea id="quiz-questions" name="quiz-questions" placeholder="Add quiz questions with correct answers. Example: What is 2 + 2?" rows="5"></textarea>
+      </div>
+
+      <!-- Boss Battle (Final Challenge) -->
+      <div class="input-group">
+        <label for="boss-battle">Boss Battle Challenge (Final Task)</label>
+        <textarea id="boss-battle" name="boss-battle" placeholder="Describe the final challenge to test students' knowledge." rows="5"></textarea>
+      </div>
+
+      <!-- XP and Badge -->
+      <div class="input-group">
+        <label for="xp-reward">XP Reward</label>
+        <input type="number" id="xp-reward" name="xp-reward" min="50" required placeholder="Enter XP points for completing this quest" />
+      </div>
+
+      <div class="input-group">
+        <label for="badge-name">Badge Name</label>
+        <input type="text" id="badge-name" name="badge-name" required placeholder="Enter a name for the badge" />
+      </div>
+
+      <div class="input-group">
+        <label for="badge-icon">Badge Icon URL</label>
+        <input type="url" id="badge-icon" name="badge-icon" required placeholder="Enter the URL of the badge icon" />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="cta-button">Create Quest</button>
+    </form>
+  </main>
+
+</body>
+</html>
