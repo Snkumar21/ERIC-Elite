@@ -1,127 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Eric-Elite – Gamified LMS</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="./Img/icon.png" />
-    <style>
-        body {
-            background-color: #0d1117;
-            font-family: 'Roboto', sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eric-Elite – Gamified LMS</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
 
-        .feature-card {
-            background: #1a2238;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 0 15px rgba(0, 255, 247, 0.1);
-        }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(180deg, #0a0f2c, #111835);
+      color: #f5f5f5;
+    }
 
-        .feature-card h3 {
-            color: #00e1d4;
-            font-size: 1.4rem;
-            margin-bottom: 10px;
-        }
+    header {
+      background-image: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?fit=crop&w=1600&q=80');
+      background-size: cover;
+      background-position: center;
+      padding: 100px 20px;
+      text-align: center;
+    }
 
-        .feature-card p {
-            font-size: 1rem;
-            color: #ccc;
-        }
+    header h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 4rem;
+      color: #00fff7;
+      margin-bottom: 20px;
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
-    </style>
+    header p {
+      font-size: 1.3rem;
+      color: #ddd;
+      max-width: 700px;
+      margin: 0 auto 30px;
+    }
+
+    .hero-buttons button {
+      margin: 0 10px;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(135deg, #00bcd4, #6200ea);
+      transition: 0.3s ease;
+    }
+
+    .hero-buttons button:hover {
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: #00fff7;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    section p, ul {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .feature-card {
+      background: #1a2238;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 0 15px rgba(0, 255, 247, 0.1);
+    }
+
+    .feature-card h3 {
+      color: #00e1d4;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .feature-card p {
+      font-size: 1rem;
+    }
+
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #0e1229;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    .cta {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .cta p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .cta a {
+      text-decoration: none;
+      background: #00fff7;
+      color: #000;
+      padding: 12px 30px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s ease;
+      display: inline-block;
+    }
+
+    .cta a:hover {
+      background: #00b3a6;
+    }
+  </style>
 </head>
-<body class="text-white">
+<body>
 
-<!-- 🔹 Hero Section with Parallax Fixed Image -->
-<section class="text-center text-white px-4 py-32 bg-no-repeat bg-cover bg-fixed bg-center min-h-screen" style="background-image: url('https://images.unsplash.com/photo-1535223289827-42f1e9919769?fit=crop&w=1600&q=80');">
-    <div class="backdrop-blur-sm bg-black/50 rounded-xl px-6 py-10 inline-block">
-        <div class="flex justify-center mb-4">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3zm0 2c-2.667 0-8 1.333-8 4v3h16v-3c0-2.667-5.333-4-8-4z" />
-            </svg>
-        </div>
-        <h1 class="text-4xl md:text-5xl font-extrabold text-violet-400 font-orbitron">Eric-Elite</h1>
-        <p class="text-gray-300 text-lg mt-2">Enter the realm of knowledge</p>
-        <div class="space-y-4 mt-8">
-            <a href="/frontend/login.html">
-                <button class="w-72 px-6 py-3 border border-gray-500 rounded-lg text-white hover:bg-blue-600 transition">
-                    Student Elite
-                </button>
-            </a>
-            <a href="./teacher-login.html">
-                <button class="w-72 px-6 py-3 border border-gray-500 rounded-lg text-white hover:bg-purple-600 transition">
-                    Elite Commander
-                </button>
-            </a>
-        </div>
+  <header>
+    <h1>Eric-Elite</h1>
+    <p>Welcome to the Future of Learning. Train like an Elite Agent. Conquer quests. Earn XP. Rise through the ranks.</p>
+    <div class="hero-buttons">
+      <a href="login-signup.html"><button>Login</button></a>
+      <a href="login-signup.html"><button>Sign Up</button></a>
     </div>
-</section>  
+  </header>
 
-<!-- 🚀 What is Eric-Elite -->
-<section class="max-w-4xl mx-auto px-6 py-16">
-    <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 text-center mb-4 font-orbitron">🚀 What is Eric-Elite?</h2>
-    <p class="text-gray-300 text-lg text-center">
-        Eric-Elite is a futuristic, gamified Learning Management System where students become elite agents, conquering quests, defeating boss battles, and leveling up through immersive educational experiences. Teachers are mission commanders—crafting challenges and rewarding excellence.
-    </p>
-</section>
+  <section>
+    <h2>🚀 What is Eric-Elite?</h2>
+    <p>Eric-Elite is a futuristic, gamified Learning Management System where students become elite agents, conquering quests (learning modules), defeating boss battles (quizzes), and leveling up through immersive educational experiences. Teachers are mission commanders—crafting challenges, tracking progress, and rewarding excellence.</p>
+  </section>
 
-<!-- 🎮 Key Features -->
-<section class="max-w-6xl mx-auto px-6 py-16">
-    <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 text-center mb-10 font-orbitron">🎮 Key Features</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="feature-card">
-            <h3>Elite XP System</h3>
-            <p>Earn XP, track your progress and level up from Recruit to Legendary Agent.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Quest-Based Learning</h3>
-            <p>Complete interactive quests and face "boss battles" in quizzes.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Achievements & Badges</h3>
-            <p>Unlock rare badges like "Quiz Crusher" and show off your streaks.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Teacher Control Panel</h3>
-            <p>Teachers can manage quests, award XP, and monitor student progress.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Leaderboard</h3>
-            <p>Rise through the ranks and earn your spot among the Top Elite Agents.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Real-time Sync</h3>
-            <p>All progress and rewards update in real time for a seamless journey.</p>
-        </div>
+  <section>
+    <h2>🎮 Key Features</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <h3>Elite XP System</h3>
+        <p>Earn XP, track your progress through a futuristic XP bar, and level up your rank from Recruit to Legendary Agent.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Quest-Based Learning</h3>
+        <p>Interactive quests with story intros, lessons, quizzes, and boss battles to reinforce mastery.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Achievements & Badges</h3>
+        <p>Unlock rare and legendary badges like "Quiz Crusher" or "Daily Streak Hero". Show off your achievements!</p>
+      </div>
+      <div class="feature-card">
+        <h3>Teacher Control Panel</h3>
+        <p>Teachers can create, manage, and deploy quests, award badges, and monitor student XP—powered by Supabase.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Leaderboard</h3>
+        <p>Climb the ranks on the Leaderboard and earn your place as a “Top Elite Agent”.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Real-time Sync</h3>
+        <p>All progress, rewards, and updates sync in real-time with Supabase to deliver a smooth learning journey.</p>
+      </div>
     </div>
-</section>
+  </section>
 
-<!-- 🧠 About -->
-<section class="max-w-4xl mx-auto px-6 py-16 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-cyan-400 mb-4 font-orbitron">🧠 About the Project</h2>
-    <p class="text-gray-300 text-lg">
-        Eric-Elite transforms learning into a mission-based adventure. With XP, badges, and real-time rewards, students engage like elite agents while teachers guide them as commanders. This platform is your launchpad to legendary learning.
-    </p>
-</section>
+  <section class="about">
+    <h2>🧠 About the Project</h2>
+    <p>Eric-Elite was designed to reimagine learning for the next generation. We blend education with immersive, game-like systems to make learning feel like leveling up in your favorite RPG. Whether you're a student seeking fun ways to study, or a teacher wanting to inspire, this platform is your launchpad to greatness.</p>
+  </section>
 
-<!-- 🌟 CTA -->
-<section class="text-center py-16 bg-[#0e1229]">
-    <h2 class="text-3xl md:text-4xl font-bold text-white font-orbitron">🌟 Ready to Begin Your Mission?</h2>
-    <p class="text-gray-400 mt-4 mb-6">Join Eric-Elite and start leveling up your learning experience today!</p>
-    <a href="./login.html" class="bg-cyan-300 text-black px-6 py-3 rounded-lg font-semibold hover:bg-cyan-500 transition">Start Your Quest</a>
-</section>
+  <section class="cta">
+    <h2>🌟 Ready to Begin Your Mission?</h2>
+    <p>Join Eric-Elite and start leveling up your learning experience today!</p>
+    <a href="login-signup.html">Start Your Quest</a>
+  </section>
 
-<!-- 🔻 Footer -->
-<footer class="text-center py-6 text-gray-500 text-sm bg-black">
+  <footer>
     &copy; 2025 Eric-Elite. All rights reserved. | Designed for Learning Legends.
-</footer>
+  </footer>
 
 </body>
 </html>
