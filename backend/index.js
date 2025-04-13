@@ -20,6 +20,11 @@ const dbConfig = {
   database: process.env.DB_NAME,
 };
 
+app.get('/', (req, res) => {
+    res.send('Express server is running!');
+  });
+
+  
 app.post('/api/login', async (req, res) => {
   const { email, password } = req.body;
 
