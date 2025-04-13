@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Teacher Dashboard | Eric-Elite</title>
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
   <!-- Navigation Bar -->
   <nav class="teacher-nav">
-    <a href="index.html" class="active">Dashboard</a>
+    <a href="dashboard.html" class="active">Dashboard</a>
     <a href="create-quest.html">Create Quest</a>
     <a href="manage-quests.html">Manage Quests</a>
     <a href="progress-tracker.html">Progress</a>
     <a href="badge-creator.html">Badges</a>
+    <button class="logout-btn" onclick="logout()">Logout</button>
   </nav>
 
   <!-- Main Dashboard Content -->
@@ -70,8 +71,17 @@
         </div>
       </div>
     </section>
-
   </main>
 
+  <script>
+    function logout() {
+      // Clear user info from localStorage
+      localStorage.removeItem("userEmail");
+      localStorage.removeItem("token");
+  
+      // Redirect to login page
+      window.location.href = "../login-signup.html";
+    }
+  </script>
 </body>
 </html>

@@ -8,7 +8,7 @@ body {
   
   .teacher-nav {
     background-color: #1e2740;
-    padding: 15px 30px;
+    padding: 25px 30px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -26,6 +26,22 @@ body {
   
   .teacher-nav a.active,
   .teacher-nav a:hover {
+    background-color: #00fff7;
+    color: #101624;
+  }
+
+  .logout-btn {
+    background-color: transparent;
+    border: 2px solid #00fff7;
+    color: #00fff7;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .logout-btn:hover {
     background-color: #00fff7;
     color: #101624;
   }
