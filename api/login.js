@@ -1,6 +1,17 @@
+import express from 'express';
 import mysql from 'mysql2/promise';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+import dotenv from 'dotenv';
+import cors from 'cors';
+
+dotenv.config();
+
+const app = express();
+const PORT = process.env.PORT || 5000;
+
+app.use(cors());
+app.use(express.json());
 
 const dbConfig = {
   host: process.env.DB_HOST,
@@ -9,11 +20,8 @@ const dbConfig = {
   database: process.env.DB_NAME,
 };
 
-export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method Not Allowed' });
-  }
-
+// POST /api/login
+app.post('/api/login', async (req, res) => {
   const { email, password } = req.body;
 
   try {
@@ -40,4 +48,8 @@ export default async function handler(req, res) {
     console.error('Login error:', err);
     res.status(500).json({ message: 'Internal server error' });
   }
-}
+});
+
+app.listen(PORT, () => {
+  console.log(`✅ Server running on http://localhost:${PORT}`);
+});
