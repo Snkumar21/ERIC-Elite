@@ -145,31 +145,48 @@
     document.getElementById("loginForm").addEventListener("submit", async function (e) {
       e.preventDefault();
   
+      const username = e.target.querySelector('input[type="text"]').value;
       const email = e.target.querySelector('input[type="email"]').value;
       const password = e.target.querySelector('input[type="password"]').value;
+      const role = document.querySelector(".role-toggle .active").textContent.toLowerCase(); // student or teacher
   
       try {
-        const response = await fetch('https://eric-elite-main-backend.vercel.app/api/login', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email: userEmail,
-            password: userPassword
-          })
+        // Step 1: Try to login
+        const loginResponse = await fetch("http://localhost:3000/loginform", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password })
         });
-
-        const data = await response.json();
   
-        if (data.success) {
-          alert("Login successful!");
-          localStorage.setItem("token", data.token);
-          window.location.href = "/student/student-dashboard.html";
+        const loginData = await loginResponse.json();
+  
+        if (loginData.success) {
+          alert("✅ Login successful!");
+          localStorage.setItem("token", loginData.token);
+          window.location.href = `/${role}/dashboard.html`; // Redirect to respective dashboard
+        } else if (loginData.message === "User not found") {
+          // Step 2: If user not found, auto-register
+          const registerResponse = await fetch("http://localhost:3000/registerform", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ username, email, password, role }) // You must accept role in backend
+          });
+  
+          const registerData = await registerResponse.json();
+  
+          if (registerData.success) {
+            alert("🎉 Registered and logged in!");
+            // Optionally login again here or redirect
+            window.location.href = `/${role}/dashboard.html`;
+          } else {
+            alert("❌ " + registerData.message);
+          }
         } else {
-          alert("❌ " + data.message);
+          alert("❌ " + loginData.message);
         }
       } catch (err) {
-        alert("⚠️ Error connecting to server");
         console.error(err);
+        alert("⚠️ Server error, please try again later.");
       }
     });
   </script>

@@ -1,8 +1,0 @@
-{
-    "rewrites": [
-        { "source": "/", "destination": "/index.html" },
-        { "source": "/login-signup", "destination": "/login-signup.html" },
-        { "source": "/dashboard", "destination": "/dashboard.html" }
-    ],
-    "cleanUrls": true
-}
