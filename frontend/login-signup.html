@@ -129,66 +129,72 @@
   </div>
 
   <script>
-    function switchRole(role) {
-      const studentBtn = document.getElementById("studentBtn");
-      const teacherBtn = document.getElementById("teacherBtn");
-  
-      if (role === "student") {
-        studentBtn.classList.add("active");
-        teacherBtn.classList.remove("active");
-      } else {
-        teacherBtn.classList.add("active");
-        studentBtn.classList.remove("active");
-      }
-    }
-  
-    document.getElementById("loginForm").addEventListener("submit", async function (e) {
-      e.preventDefault();
-  
-      const username = e.target.querySelector('input[type="text"]').value;
-      const email = e.target.querySelector('input[type="email"]').value;
-      const password = e.target.querySelector('input[type="password"]').value;
-      const role = document.querySelector(".role-toggle .active").textContent.toLowerCase(); // student or teacher
-  
-      try {
-        // Step 1: Try to login
-        const loginResponse = await fetch("http://localhost:3000/loginform", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password })
-        });
-  
-        const loginData = await loginResponse.json();
-  
-        if (loginData.success) {
-          alert("✅ Login successful!");
-          localStorage.setItem("token", loginData.token);
-          window.location.href = `/${role}/dashboard.html`; // Redirect to respective dashboard
-        } else if (loginData.message === "User not found") {
-          // Step 2: If user not found, auto-register
-          const registerResponse = await fetch("http://localhost:3000/registerform", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, email, password, role }) // You must accept role in backend
-          });
-  
-          const registerData = await registerResponse.json();
-  
-          if (registerData.success) {
-            alert("🎉 Registered and logged in!");
-            // Optionally login again here or redirect
-            window.location.href = `/${role}/dashboard.html`;
-          } else {
-            alert("❌ " + registerData.message);
-          }
+      function switchRole(role) {
+        const studentBtn = document.getElementById("studentBtn");
+        const teacherBtn = document.getElementById("teacherBtn");
+
+        if (role === "student") {
+          studentBtn.classList.add("active");
+          teacherBtn.classList.remove("active");
         } else {
-          alert("❌ " + loginData.message);
+          teacherBtn.classList.add("active");
+          studentBtn.classList.remove("active");
         }
-      } catch (err) {
-        console.error(err);
-        alert("⚠️ Server error, please try again later.");
       }
-    });
+
+      document.getElementById("loginForm").addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const username = e.target.querySelector('input[type="text"]').value;
+        const email = e.target.querySelector('input[type="email"]').value;
+        const password = e.target.querySelector('input[type="password"]').value;
+        const role = document.querySelector(".role-toggle .active").textContent.toLowerCase(); // student or teacher
+
+        try {
+          // Try login
+          const res = await fetch('http://localhost:3000/loginform', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+          });
+
+          const data = await res.json();
+
+          if (data.success) {
+            // ✅ Save email and token in localStorage
+            localStorage.setItem("userEmail", email);
+            localStorage.setItem("token", data.token);
+
+            // 🔁 Redirect to role-based dashboard
+            window.location.href = `/${role}/dashboard.html`;
+          } else if (data.message === "User not found") {
+            // Auto-register
+            const registerResponse = await fetch("http://localhost:3000/registerform", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ username, email, password, role })
+            });
+
+            const registerData = await registerResponse.json();
+
+            if (registerData.success) {
+              alert("🎉 Registered and logged in!");
+              localStorage.setItem("userEmail", email);
+              localStorage.setItem("token", registerData.token);
+              window.location.href = `/${role}/dashboard.html`;
+            } else {
+              alert("❌ " + registerData.message);
+            }
+          } else {
+            alert(data.message || "Login failed");
+          }
+        } catch (err) {
+          console.error(err);
+          alert("⚠️ Server error, please try again later.");
+        }
+      });
   </script>
 </body>
 </html>

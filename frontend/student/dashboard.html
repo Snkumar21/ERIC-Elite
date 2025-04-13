@@ -183,7 +183,7 @@
     // 2. If no email → redirect to login
     if (!email) {
       alert("You are not logged in!");
-      window.location.href = "/login.html";
+      window.location.href = "../login-signup.html";
     }
   
     // 3. Dummy data based on email (replace this logic later if needed)
@@ -206,13 +206,6 @@
   
     // 5. Optional - show email somewhere
     document.getElementById("userEmail").innerText = ` - ${email}`;
-  
-    // 6. Logout
-    function logout() {
-      localStorage.removeItem("userEmail");
-      alert("Logged out successfully!");
-      window.location.href = "/login.html";
-    }
   </script> 
 </body>
 </html>
