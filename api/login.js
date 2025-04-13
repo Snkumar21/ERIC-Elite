@@ -20,7 +20,7 @@ const dbConfig = {
   database: process.env.DB_NAME,
 };
 
-// POST /api/login
+// POST
 app.post('/api/login', async (req, res) => {
   const { email, password } = req.body;
 
